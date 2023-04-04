@@ -1,0 +1,65 @@
+.videoFooter{
+
+    position: relative;
+    color: aliceblue;
+    bottom: 20%; /*emprra os elementos a 20$% pro final da tela*/
+    margin-left: 30px;
+}
+
+.videoFooter__text h3{
+    padding-bottom: 20px;  /*espaço entre o @ que escolhemos em video.js e o resto das descrições para o que tem h3*/
+
+}
+
+.videoFooter__text p{
+    padding-bottom: 20px;  /*o mesmo de cima mas para os elementos que comecem com parágrafo*/
+}
+
+.videoFooter__music{
+    display: flex;
+}
+
+.videoFooterMusic__text{
+    width: 80%;
+    overflow-x: hidden;
+}
+
+.videoFooterMusic__text p{
+    animation: moveTheText 3s infinite linear;
+}
+
+.videoFooter__record{
+    animation: spinTheRecord 2s infinite linear;
+    position: absolute;
+    bottom: 5px;
+    right: 20px;
+    height: 50px;
+    filter: invert(1);
+}
+
+@keyframes spinTheRecord {
+    0%{
+        transform: rotate(0deg); /*roda a x graus no estado inicial da animacao*/
+    }
+    100%{
+        transform: rotate(360deg); /*roda a 360 graus no estado final da animacao*/
+    }
+}
+
+@keyframes moveTheText{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+@media only screen and (max-width: 440px){
+    .videoFooter{
+        bottom: 22%;
+    }
+    .videoFooterMusic__text{
+        width: 78%;
+    }
+  }
